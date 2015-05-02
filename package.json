@@ -1,0 +1,17 @@
+{
+  "name": "Primedice",
+  "version": "0.1.0",
+  "description": "Node.js library for accessing Primedice's API",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "author": "João Campinhos <joao.campinhos@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "superagent": "^1.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.4"
+  }
+}
