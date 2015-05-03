@@ -154,3 +154,7 @@ npm install --save primedice
    if (!err) console.log(response);
  });
 ```
+
+##License
+
+MIT

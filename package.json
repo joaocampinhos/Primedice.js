@@ -1,5 +1,5 @@
 {
-  "name": "Primedice",
+  "name": "primedice",
   "version": "0.1.0",
   "description": "Node.js library for accessing Primedice's API",
   "main": "index.js",
