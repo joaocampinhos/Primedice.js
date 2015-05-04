@@ -8,6 +8,11 @@
   },
   "author": "João Campinhos <joao.campinhos@gmail.com>",
   "license": "MIT",
+  "homepage": "https://github.com/joaocampinhos/Primedice.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:joaocampinhos/Primedice.js.git"
+  },
   "dependencies": {
     "superagent": "^1.2.0"
   },
