@@ -4,6 +4,7 @@ var Primedice = require('..');
 
 describe("Account movements API", function() {
 
+  /*
   it('should return the deposit address', function(done) {
     var test = new Primedice(key);
     test.deposit(function(error, response) {
@@ -13,6 +14,7 @@ describe("Account movements API", function() {
       done();
     });
   });
+  */
 
   it('should returns a list of your deposits', function(done) {
     var test = new Primedice(key);
