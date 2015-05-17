@@ -14,7 +14,7 @@ describe("Bet API", function() {
     });
   });
 
-  it('should return a list with the last 30 of the site', function(done) {
+  it('should return a list with the last 30 bets of the site', function(done) {
     var test = new Primedice(key);
     test.bets(function(error, response) {
       assert.ifError(error);

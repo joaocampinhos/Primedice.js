@@ -1,4 +1,4 @@
-# Node Primedice
+# Node Primedice [![Build Status](https://travis-ci.org/joaocampinhos/Primedice.js.svg?branch=master)](https://travis-ci.org/joaocampinhos/Primedice.js)
 Node.js library for accessing [Primedice's API](https://primedice.com/api)
 
 ## Instalation
@@ -154,6 +154,73 @@ npm install --save primedice
    if (!err) console.log(response);
  });
 ```
+
+### Primedice.send(room:String, message:String, toUsername:String, callback:Function)
+
+  Send a message to a chat room or a PM to a specific user
+  
+  Examples:
+  
+  Send a message to the english chat room
+```js
+ Primedice.send("English", "Hello World!", function(error, response) {
+   if (!err) console.log(response);
+ });
+```
+
+  
+  Send a message to user Visions
+```js
+ Primedice.send("English", "Hello World!", "Visions", function(error, response) {
+   if (!err) console.log(response);
+ });
+```
+
+### Primedice.rooms(callback:Function)
+
+  Get list of rooms
+  
+  Example:
+  
+```js
+ Primedice.rooms(function(error, response) {
+   if (!err) console.log(response);
+ });
+```
+
+### Primedice.messages(room:String, callback:Function)
+
+  Get chat messages from a room
+  
+  Examples:
+  
+  No room (defaults to English room)
+```js
+ Primedice.messages(function(error, response) {
+   if (!err) console.log(response);
+ });
+```
+
+  
+  Specific room
+```js
+ Primedice.messages('PVP', function(error, response) {
+   if (!err) console.log(response);
+ });
+```
+
+### Primedice.allmessages(callback:Function)
+
+  Get chat messages from all available rooms
+  
+  Example:
+  
+```js
+ Primedice.allmesages(function(error, response) {
+   if (!err) console.log(response);
+ });
+```
+
 
 ##License
 

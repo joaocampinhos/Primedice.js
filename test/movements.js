@@ -16,7 +16,7 @@ describe("Account movements API", function() {
   });
   */
 
-  it('should returns a list of your deposits', function(done) {
+  it('should return a list of your deposits', function(done) {
     var test = new Primedice(key);
     test.deposits(function(error, response) {
       assert.ifError(error);
@@ -26,7 +26,7 @@ describe("Account movements API", function() {
     });
   });
 
-  it('should returns a list of your withdrawals', function(done) {
+  it('should return a list of your withdrawals', function(done) {
     var test = new Primedice(key);
     test.withdrawals(function(error, response) {
       assert.ifError(error);

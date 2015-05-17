@@ -369,35 +369,136 @@ Primedice.prototype.bets = function(){
 
 
 /**
- * **Not Implemented**
- * Send a message to a chat room
+ * Send a message to a chat room or a PM to a specific user
+ *
+ * Examples:
+ *
+ * Send a message to the english chat room
+ *    Primedice.send("English", "Hello World!", function(error, response) {
+ *      if (!err) console.log(response);
+ *    });
+ *
+ * Send a message to user Visions
+ *    Primedice.send("English", "Hello World!", "Visions", function(error, response) {
+ *      if (!err) console.log(response);
+ *    });
+ *
+ * @param {String} room
+ * @param {String} message
+ * @param {String?} toUsername
+ * @param {Function} callback
  */
 
-//Primedice.prototype.send = function(){};
+Primedice.prototype.send = function() {
+
+  var room = arguments[0];
+  var message = arguments[1];
+  var callback;
+
+  var url = this._uri + 'send?access_token=' + this._token;
+  var body = 'room='+room+'&message='+message;
+
+  if (arguments.length == 3) {
+    callback = arguments[2];
+  }
+  else {
+    body += '&toUsername='+arguments[2];
+    callback = arguments[3];
+  }
+
+  request.post(url).send(body).end(function(error,response) {
+    callback(response.error,response.body);
+  });
+
+};
 
 
 /**
- * **Not Implemented**
  * Get list of rooms
+ *
+ * Example:
+ *
+ *    Primedice.rooms(function(error, response) {
+ *      if (!err) console.log(response);
+ *    });
+ *
+ * @param {Function} callback
  */
 
-//Primedice.prototype.rooms = function() {};
+Primedice.prototype.rooms = function(callback) {
+
+  var url = this._uri + 'rooms?access_token=' + this._token;
+
+  request.get(url, function(error, response) {
+    callback(response.error,response.body);
+  });
+
+};
 
 
 /**
- * **Not Implemented**
  * Get chat messages from a room
+ *
+ * Examples:
+ *
+ * No room (defaults to English room)
+ *    Primedice.messages(function(error, response) {
+ *      if (!err) console.log(response);
+ *    });
+ *
+ * Specific room
+ *    Primedice.messages('PVP', function(error, response) {
+ *      if (!err) console.log(response);
+ *    });
+ *
+ * @param {String?} room
+ * @param {Function} callback
  */
 
-//Primedice.prototype.messages = function(){};
+Primedice.prototype.messages = function() {
+
+  var room;
+  var callback;
+
+  if (arguments.length == 1) {
+    callback = arguments[0];
+  }
+  else {
+    room = '&room=' + arguments[0];
+    callback = arguments[1];
+  }
+
+  var url = this._uri + 'messages?access_token=' + this._token + room;
+
+  request.get(url, function(error, response) {
+    callback(response.error,response.body);
+  });
+
+};
+
 
 
 /**
- * **Not Implemented**
  * Get chat messages from all available rooms
+ *
+ * Example:
+ *
+ *    Primedice.allmesages(function(error, response) {
+ *      if (!err) console.log(response);
+ *    });
+ *
+ * @param {Function} callback
  */
 
-//Primedice.prototype.allmessages = function() {};
+Primedice.prototype.allmessages = function(callback) {
+
+  var url = this._uri + 'allmessages?access_token=' + this._token;
+
+  request.get(url, function(error, response) {
+    callback(response.error,response.body);
+  });
+
+};
 
 
 /**
