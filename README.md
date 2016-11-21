@@ -36,7 +36,7 @@ npm install --save primedice
   userName's info
 ```js
  Primedice.users('userName', function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -44,7 +44,7 @@ npm install --save primedice
   Your own info
 ```js
  Primedice.users(function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -56,7 +56,7 @@ npm install --save primedice
 
 ```js
  Primedice.deposit(function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -68,7 +68,7 @@ npm install --save primedice
 
 ```js
  Primedice.deposits(function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -81,7 +81,7 @@ npm install --save primedice
 ```js
  //withdraw 100000 (10000 is the transaction fee)
  Primedice.withdraw(110000, 'My81tc01N4dDr355', function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -93,7 +93,7 @@ npm install --save primedice
 
 ```js
  Primedice.withdrawals(function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -106,7 +106,7 @@ npm install --save primedice
 ```js
  //for a bet of 0.00000010 with 2x Payout (Roll under 49.5 to win)
  Primedice.bet(10, 49.5, '<', function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -118,7 +118,7 @@ npm install --save primedice
 
 ```js
  Primedice.seed('533D', function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -130,7 +130,7 @@ npm install --save primedice
 
 ```js
  Primedice.mybets(function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -143,7 +143,7 @@ npm install --save primedice
   30 bets of the site
 ```js
  Primedice.bets(function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -151,7 +151,7 @@ npm install --save primedice
   lookup a bet id
 ```js
  Primedice.bets(4800000000, (error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -164,7 +164,7 @@ npm install --save primedice
   Send a message to the english chat room
 ```js
  Primedice.send("English", "Hello World!", function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -172,7 +172,7 @@ npm install --save primedice
   Send a message to user Visions
 ```js
  Primedice.send("English", "Hello World!", "Visions", function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -184,7 +184,7 @@ npm install --save primedice
   
 ```js
  Primedice.rooms(function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -197,7 +197,7 @@ npm install --save primedice
   No room (defaults to English room)
 ```js
  Primedice.messages(function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -205,7 +205,7 @@ npm install --save primedice
   Specific room
 ```js
  Primedice.messages('PVP', function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
@@ -217,7 +217,7 @@ npm install --save primedice
   
 ```js
  Primedice.allmesages(function(error, response) {
-   if (!err) console.log(response);
+   if (!error) console.log(response);
  });
 ```
 
