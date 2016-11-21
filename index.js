@@ -62,7 +62,7 @@ Primedice.prototype.users = function() {
     callback = arguments[1];
   }
 
-  var url = this._uri + 'users/'+userName+'?access_token=' + this._token;
+  var url = this._uri + 'users/'+userName+'?api_key=' + this._token;
 
   request.get(url, function(error, response) {
     callback(response.error,response.body);
@@ -149,7 +149,7 @@ Primedice.prototype.users = function() {
 
 Primedice.prototype.deposit = function(callback) {
 
-  var url = this._uri + 'deposit?access_token=' + this._token;
+  var url = this._uri + 'deposit?api_key=' + this._token;
 
   request.get(url, function(error, response) {
     callback(response.error,response.body);
@@ -172,7 +172,7 @@ Primedice.prototype.deposit = function(callback) {
 
 Primedice.prototype.deposits = function(callback) {
 
-  var url = this._uri + 'deposits?access_token=' + this._token;
+  var url = this._uri + 'deposits?api_key=' + this._token;
 
   request.get(url, function(error, response) {
     callback(response.error,response.body);
@@ -198,7 +198,7 @@ Primedice.prototype.deposits = function(callback) {
 
 Primedice.prototype.withdraw = function(amount, address, callback) {
 
-  var url = this._uri + 'withdraw?access_token=' + this._token;
+  var url = this._uri + 'withdraw?api_key=' + this._token;
 
   request.post(url).send('amount='+amount+'&address='+address).end(function(error,response) {
     callback(response.error,response.body);
@@ -221,7 +221,7 @@ Primedice.prototype.withdraw = function(amount, address, callback) {
 
 Primedice.prototype.withdrawals = function(callback) {
 
-  var url = this._uri + 'withdrawals?access_token=' + this._token;
+  var url = this._uri + 'withdrawals?api_key=' + this._token;
 
   request.get(url, function(error, response) {
     callback(response.error,response.body);
@@ -248,7 +248,7 @@ Primedice.prototype.withdrawals = function(callback) {
 
 Primedice.prototype.bet = function(amount, target, condition, callback) {
 
-  var url = this._uri + 'bet?access_token=' + this._token;
+  var url = this._uri + 'bet?api_key=' + this._token;
 
   request.post(url).send('amount='+amount+'&target='+target+'&condition='+condition).end(function(error,response) {
     callback(response.error,response.body);
@@ -272,7 +272,7 @@ Primedice.prototype.bet = function(amount, target, condition, callback) {
 
 Primedice.prototype.seed = function(seed, callback){
 
-  var url = this._uri + 'seed?access_token=' + this._token;
+  var url = this._uri + 'seed?api_key=' + this._token;
 
   request.post(url).send('seed='+seed).end(function(error,response) {
     callback(response.error,response.body);
@@ -295,7 +295,7 @@ Primedice.prototype.seed = function(seed, callback){
 
 Primedice.prototype.mybets = function(callback) {
 
-  var url = this._uri + 'mybets?access_token=' + this._token;
+  var url = this._uri + 'mybets?api_key=' + this._token;
 
   request.get(url, function(error, response) {
     callback(response.error,response.body);
@@ -329,11 +329,11 @@ Primedice.prototype.bets = function(){
   var url;
 
   if (arguments.length == 1) {
-    url = this._uri + 'bets?access_token=' + this._token;
+    url = this._uri + 'bets?api_key=' + this._token;
     callback = arguments[0];
   }
   else {
-    url = this._uri + 'bets/'+arguments[0]+'?access_token=' + this._token;
+    url = this._uri + 'bets/'+arguments[0]+'?api_key=' + this._token;
     callback = arguments[1];
   }
 
@@ -395,7 +395,7 @@ Primedice.prototype.send = function() {
   var message = arguments[1];
   var callback;
 
-  var url = this._uri + 'send?access_token=' + this._token;
+  var url = this._uri + 'send?api_key=' + this._token;
   var body = 'room='+room+'&message='+message;
 
   if (arguments.length == 3) {
@@ -427,7 +427,7 @@ Primedice.prototype.send = function() {
 
 Primedice.prototype.rooms = function(callback) {
 
-  var url = this._uri + 'rooms?access_token=' + this._token;
+  var url = this._uri + 'rooms?api_key=' + this._token;
 
   request.get(url, function(error, response) {
     callback(response.error,response.body);
@@ -468,7 +468,7 @@ Primedice.prototype.messages = function() {
     callback = arguments[1];
   }
 
-  var url = this._uri + 'messages?access_token=' + this._token + room;
+  var url = this._uri + 'messages?api_key=' + this._token + room;
 
   request.get(url, function(error, response) {
     callback(response.error,response.body);
@@ -492,7 +492,7 @@ Primedice.prototype.messages = function() {
 
 Primedice.prototype.allmessages = function(callback) {
 
-  var url = this._uri + 'allmessages?access_token=' + this._token;
+  var url = this._uri + 'allmessages?api_key=' + this._token;
 
   request.get(url, function(error, response) {
     callback(response.error,response.body);
